@@ -16,7 +16,7 @@ jobs:
         if: success() || failure()        # run this step even if previous step failed
         with:
           name: test-results
-          path: /**/TEST-*.xml
+          path: ${{ github.workspace }}/**/TestResults/*.xml
       - name:
         uses: dorny/test-reporter@v1
         with:
