@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Test
         run: |
-          dotnet test -l:"trx;LogFileName=TEST-Lib.xml" `
+          dotnet test -l:"trx;LogFileName=TEST-Lib.xml" 
       - name: Upload Test artifacts
         uses: actions/upload-artifact@v2  # upload test results
         if: success() || failure()        # run this step even if previous step failed
