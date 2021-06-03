@@ -1,0 +1,26 @@
+name: Build
+
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        run: |
+          dotnet test -l:"trx;LogFileName=TEST-Lib.xml" `
+      - name: Upload Test artifacts
+        uses: actions/upload-artifact@v2  # upload test results
+        if: success() || failure()        # run this step even if previous step failed
+        with:
+          name: test-results
+          path: \**\TEST-*.xml
+      - name:
+        uses: dorny/test-reporter@v1
+        with:
+          artifact: test-results            # artifact name
+          name: Test report
+          path: '**\*.xml'                     # Path to test results (inside artifact .zip)
+          reporter: dotnet-trx              # Format of test results

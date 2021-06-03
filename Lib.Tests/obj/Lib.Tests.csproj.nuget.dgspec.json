@@ -1,0 +1,134 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib.Tests\\Lib.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib.Tests\\Lib.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib.Tests\\Lib.Tests.csproj",
+        "projectName": "Lib.Tests",
+        "projectPath": "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib.Tests\\Lib.Tests.csproj",
+        "packagesPath": "C:\\Users\\jozef.chmelar.ml.MTS\\.nuget\\packages\\",
+        "outputPath": "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jozef.chmelar.ml.MTS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://vtr.mts.sk/foxtroth.vortex/_packaging/developer-alphas/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib\\Lib.csproj": {
+                "projectPath": "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib\\Lib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.16.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib\\Lib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib\\Lib.csproj",
+        "projectName": "Lib",
+        "projectPath": "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib\\Lib.csproj",
+        "packagesPath": "C:\\Users\\jozef.chmelar.ml.MTS\\.nuget\\packages\\",
+        "outputPath": "C:\\MTS\\Develop\\GitHub\\gh-actions-test-report\\Lib\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jozef.chmelar.ml.MTS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://vtr.mts.sk/foxtroth.vortex/_packaging/developer-alphas/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
