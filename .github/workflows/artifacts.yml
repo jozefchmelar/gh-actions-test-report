@@ -1,7 +1,7 @@
 name: 'Artifacts'
 on:
   workflow_run:
-    workflows: ['Build']
+    workflows: ['Test Report']
     types:
       - completed
 jobs:
@@ -12,5 +12,4 @@ jobs:
       with:
         name: artifacts
         path: nugets/
-
     - run: ls nugets
