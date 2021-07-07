@@ -18,3 +18,13 @@ jobs:
         with:
           name: test-results
           path: ${{ github.workspace }}/**/TestResults/*.xml
+      - name : Build nugets
+        run : |
+          dotnet pack -o nugets
+      - name: Upload NuGets artifacts
+        uses: actions/upload-artifact@v2  # upload test results
+        if: success()         # run this step even if previous step failed
+        with:
+          name: artifacts
+          path: ${{ github.workspace }}/**/*.nupkg
+      
