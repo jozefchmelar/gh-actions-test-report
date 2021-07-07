@@ -1,4 +1,4 @@
-name: 'Artifacts'
+name: artifacts
 on:
   workflow_dispatch:
 jobs:
@@ -7,6 +7,6 @@ jobs:
     steps:
     - uses: actions/download-artifact@master
       with:
-        name: artifacts
+        name: nugets
         path: nugets/
     - run: ls nugets

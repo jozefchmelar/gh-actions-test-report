@@ -1,4 +1,4 @@
-name: 'After build'
+name: 'Test report'
 on:
   workflow_run:
     workflows: ['Build']
@@ -14,13 +14,3 @@ jobs:
         name: Test report
         path: '**/*.xml'
         reporter: dotnet-trx 
-        
-  artifacts:
-    needs : report
-    runs-on: windows-latest
-    steps:
-    - uses: actions/download-artifact@master
-      with:
-        name: artifacts
-        path: nugets/
-    - run: ls nugets
