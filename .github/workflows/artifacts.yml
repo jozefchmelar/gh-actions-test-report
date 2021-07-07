@@ -10,7 +10,7 @@ jobs:
       with:
         workflow: main.yml
         workflow_conclusion: success
-        branch: dev
+        branch: master
         name: nugets
         path: nugets
     - run: dotnet nuget push "nugets\*.nupkg" -s \nugets_out
