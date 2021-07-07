@@ -13,5 +13,5 @@ jobs:
         branch: master
         name: nugets
         path: nugets
-    - run: dotnet nuget push "nugets\*.nupkg" -s ".\nugets_out"
+    - run: dotnet nuget push "nugets\*.nupkg" -s ".\."
     - run: ls \nugets_out
