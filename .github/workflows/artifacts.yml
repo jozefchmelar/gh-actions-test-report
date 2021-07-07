@@ -5,7 +5,7 @@ on:
     types:
       - completed
 jobs:
-  report:
+  artifacts:
     runs-on: windows-latest
     steps:
     - uses: actions/download-artifact@master
