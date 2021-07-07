@@ -14,7 +14,9 @@ jobs:
         name: Test report
         path: '**/*.xml'
         reporter: dotnet-trx 
+        
   artifacts:
+    needs : report
     runs-on: windows-latest
     steps:
     - uses: actions/download-artifact@master
