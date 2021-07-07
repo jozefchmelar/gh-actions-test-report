@@ -14,4 +14,4 @@ jobs:
         name: nugets
         path: nugets
     - run: dotnet nuget push "nugets\*.nupkg" -s "${{ github.workspace }}/"
-    - run: ls \nugets_out
+    - run: ls "${{ github.workspace }}/"
