@@ -26,5 +26,5 @@ jobs:
         if: success()         # run this step even if previous step failed
         with:
           name: artifacts
-          path: ${{ github.workspace }}/**/*.nupkg
+          path: ${{ github.workspace }}/nugets/*.nupkg
       
