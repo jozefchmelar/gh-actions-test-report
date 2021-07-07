@@ -1,0 +1,16 @@
+name: 'Artifacts'
+on:
+  workflow_run:
+    workflows: ['Build']
+    types:
+      - completed
+jobs:
+  report:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/download-artifact@master
+      with:
+        name: artifacts
+        path: nugets/
+
+    - run: ls nugets
