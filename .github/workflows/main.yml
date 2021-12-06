@@ -11,9 +11,9 @@ jobs:
       - uses: actions/checkout@v2
       - name : Run script
         run : |
-          Write-Output ("BuildNumberX=1.10.14-alpha-32") >> $env:GITHUB_ENV
+          Write-Output ("BuildNumber=1.10.14-alpha-32") >> $env:GITHUB_ENV
       - name : Tag commits       
-        if : env.BuildNumber && success()
+        if : env.BuildNumber && success() && github.event_name != 'pull_request'
         run : |
           git config --global user.email "gh-action@jozefchmelar.com"
           git config --global user.name "gh-action"
