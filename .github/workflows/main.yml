@@ -13,7 +13,7 @@ jobs:
         run : |
           Write-Output ("BuildNumber=1.10.14-alpha-32") >> $env:GITHUB_ENV
       - name : Tag commits       
-        if : env.BuildNumber
+        if : env.BuildNumber && success()
         run : |
           git config --global user.email "gh-action@jozefchmelar.com"
           git config --global user.name "gh-action"
