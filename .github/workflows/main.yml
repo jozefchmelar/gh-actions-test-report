@@ -12,4 +12,5 @@ jobs:
       - name : Tag commits
         run : |
           Write-Host ${{github.run_id	}}
-          Write-Host ${{github.job.id}}          
+          Write-Host ${{github.job_id}}          
+          Write-Host ${{ENV.GITHUB_JOB}}          
