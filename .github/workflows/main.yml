@@ -12,10 +12,12 @@ jobs:
       - name : Run script
         run : |
           [System.Environment]::SetEnvironmentVariable('BuildNumber','1.10.14-alpha-32')
+          Write-Output ("BuildNumber=1.10.14-alpha-32") >> $env:GITHUB_ENV
+
       - name : Tag commits       
         run : |
           git config --global user.email "gh-action@jozefchmelar.com"
           git config --global user.name "gh-action"
-          $tag = "GH-${{github.run_id}}"+"-"+  [System.Environment]::GetEnvironmentVariable('BuildNumber')
+          $tag = "GH-${{github.run_id}}"+"-"+${{github.BuildNumber}}
           git tag -a $tag -m "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
           git push --tags
