@@ -17,5 +17,5 @@ jobs:
           git config --global user.email "gh-action@jozefchmelar.com"
           git config --global user.name "gh-action"
           $tag = "GH-${{github.run_id}}-${{env.BuildNumber}}"
-          git tag -a $tag -m "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+          git tag $tag 
           git push --tags
