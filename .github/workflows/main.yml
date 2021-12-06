@@ -27,3 +27,7 @@ jobs:
         with:
           name: nugets
           path: ${{ github.workspace }}/nugets/*.nupkg
+      - name : Tag commits
+        run : |
+          Write-Host ${{github.run_id	}}
+          Write-Host ${{github.job_id	}}          
