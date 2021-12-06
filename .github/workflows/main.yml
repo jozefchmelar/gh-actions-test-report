@@ -9,10 +9,14 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v2
+      - name : Run script
+        run : |
+          $env:BuildNumber = "1.10.14-alpha-32"
       - name : Tag commits
         run : |
           git config --global user.email "gh-action@jozefchmelar.com"
           git config --global user.name "gh-action"
-          git tag -a GH-${{github.run_id}} -m "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+          $tag = GH-${{github.run_id}}+"-"+ $env:BuildNumber
+          git tag -a $tag -m "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
           git push --tags
         
