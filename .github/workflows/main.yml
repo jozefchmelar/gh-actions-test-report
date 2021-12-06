@@ -12,7 +12,7 @@ jobs:
       - name : Run script
         run : |
           Write-Output ("BuildNumber=1.10.14-alpha-32") >> $env:GITHUB_ENV
-      - name : Tag commits       
+      - name : Tag commits on build     
         if : env.BuildNumber && success() && github.event_name != 'pull_request'
         run : |
           git config --global user.email "gh-action@jozefchmelar.com"
