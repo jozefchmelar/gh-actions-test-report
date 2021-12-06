@@ -13,4 +13,3 @@ jobs:
         run : |
           Write-Host ${{github.run_id	}}
           Write-Host ${{github.jobs.job_id	}}          
-          Write-Host ${{jobs.job_id	}}          
