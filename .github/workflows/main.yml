@@ -9,25 +9,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v2
-      - name: Test
-        run: |
-          dotnet test -l:"trx;LogFileName=TEST-Lib.xml" 
-      - name: Upload Test artifacts
-        uses: actions/upload-artifact@v2  # upload test results
-        if: success() || failure()        # run this step even if previous step failed
-        with:
-          name: test-results
-          path: ${{ github.workspace }}/**/TestResults/*.xml
-      - name : Build nugets
-        run : |
-          dotnet pack -o nugets
-      - name: Upload NuGets artifacts
-        uses: actions/upload-artifact@v2  # upload test results
-        if: success()         # run this step even if previous step failed
-        with:
-          name: nugets
-          path: ${{ github.workspace }}/nugets/*.nupkg
       - name : Tag commits
         run : |
           Write-Host ${{github.run_id	}}
-          Write-Host ${{github.job_id	}}          
+          Write-Host ${{github.jobs.job_id	}}          
+          Write-Host ${{jobs.job_id	}}          
