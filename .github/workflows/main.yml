@@ -18,5 +18,6 @@ jobs:
           git config --global user.email "gh-action@jozefchmelar.com"
           git config --global user.name "gh-action"
           $tag = "GH-${{github.run_id}}-${{env.BuildNumber}}"
-          git tag $tag 
+          git tag "same-tag"
           git push --tags
+        continue-on-error: true
