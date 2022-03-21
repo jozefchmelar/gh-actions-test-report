@@ -23,11 +23,11 @@ jobs:
           git push --tags
         continue-on-error: true
   report:
-  runs-on: windows-latest
-  steps:
-  - uses: dorny/test-reporter@v1
-    with:
-      artifact: test-results            
-      name: Test report
-      path: '**/*.xml'
-      reporter: dotnet-trx 
+    runs-on: windows-latest
+    steps:
+    - uses: dorny/test-reporter@v1
+      with:
+        artifact: test-results            
+        name: Test report
+        path: '**/*.xml'
+        reporter: dotnet-trx 
