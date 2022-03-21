@@ -1,4 +1,4 @@
-name: BuildCopy
+name: Manual
 
 on: 
   workflow_dispatch:
