@@ -12,12 +12,13 @@ jobs:
         run: |
           dotnet test 
           dotnet test -l:"trx;LogFileName=TEST-Lib.xml" 
-      - name: Upload Test artifacts
-        uses: actions/upload-artifact@v2  # upload test results
-        if: success() || failure()        # run this step even if previous step failed
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
         with:
-          name: test-results
-          path: ${{ github.workspace }}/**/TestResults/*.xml
+          name: Test           # Name of the check run which will be created
+          path: '**/TestResults/*.xml'    # Path to test results
+          reporter: dotnet-trx 
       - name : Build nugets
         run : |
           dotnet pack -o nugets
@@ -27,13 +28,3 @@ jobs:
         with:
           name: nugets
           path: ${{ github.workspace }}/nugets/*.nupkg
-  report:
-    needs: build
-    runs-on: windows-latest
-    steps:
-    - uses: dorny/test-reporter@v1
-      with:
-        artifact: test-results            
-        name: Test report
-        path: '**/*.xml'
-        reporter: dotnet-trx 
