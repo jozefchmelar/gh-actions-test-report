@@ -27,7 +27,7 @@ jobs:
         with:
           name: nugets
           path: ${{ github.workspace }}/nugets/*.nupkg
-   report:
+  report:
     runs-on: windows-latest
     steps:
     - uses: dorny/test-reporter@v1
