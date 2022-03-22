@@ -11,7 +11,7 @@ jobs:
       - name: Test
         run: |
           dotnet test 
-          dotnet test -l:"trx;LogFileName=TEST-Lib.xml" 
+          dotnet test -l:"trx" 
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed
